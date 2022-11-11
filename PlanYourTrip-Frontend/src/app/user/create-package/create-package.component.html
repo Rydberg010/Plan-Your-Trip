@@ -1,0 +1,101 @@
+<style>
+	body:after {
+	   background: #000;
+	}
+
+  .bg
+  {
+    background-image: url(assets/images/12.jpg);
+    background-attachment: fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<body class="img js-fullheight bg">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">PlanYourTrip</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/admin-home']">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/list-organization']">Organization List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/list-hotel']">Hotel List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/create-hotel']">Create Hotel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/list-package']">Package List</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/create-package']"> Create Package <span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+        <form class="form-inline my-2 my-lg-0 mr-5">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <button type="button" class="btn btn-danger" routerLink="" (click)="logout()">Logout</button>
+    </div>
+</nav>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4" style="background-color: rgb(60, 55, 55); border-radius: 20px;">
+					<div class="login-wrap p-0">
+						<h3 class="mb-4 text-center">Create New Package</h3>
+						<form #loginForm = "ngForm" class="signin-form" (ngSubmit)="onSubmit()">
+              <h2 style="font-family: cursive;"> <b><i>Select Hotel</i></b> </h2>
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-8 offet-sm-3">
+                    <div class="form-group selectForm">
+                      <select name="doctor" id="doctor" class="btn btn-secondary custome-select selectForm" [(ngModel)]="hotelId">
+                        <option value="" selected>Select</option>
+                        <option *ngFor=" let hot of hotels" value="{{hot.hotelId}}" class="selectItem">{{ hot.hotelName }}
+                        </option>
+                      </select>
+                    </div><br>
+                  </div>
+                </div>
+              </div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Enter Package Name" required name="packName" [(ngModel)]="packName">
+							</div>
+              <div class="form-group">
+								<input type="text" class="form-control" placeholder="Enter Package City" required name="packCity" [(ngModel)]="packCity" >
+							</div>
+              <div class="form-group">
+								<input type="text" class="form-control" placeholder="Enter Package Price" required name="packPrice" [(ngModel)]="packPrice" >
+							</div>
+              <div class="form-group">
+								<input type="text" class="form-control" placeholder="Enter Package Rating" required name="packRating" [(ngModel)]="packRating"  >
+							</div>
+							<div class="form-group">
+								<button type="submit" class="form-control btn btn-primary submit px-3">Create</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>

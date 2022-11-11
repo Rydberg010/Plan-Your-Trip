@@ -1,0 +1,61 @@
+<body class="img js-fullheight" style="background-image: url(assets/images/12.jpg); background-repeat: no-repeat; background-attachment: fixed;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">PlanYourTrip</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/admin-home']">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/list-organization']">Organization List</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/list-hotel']">Hotel List<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/create-hotel']">Create Hotel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/list-package']">Package List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/create-package']"> Create Package</a>
+        </li>
+    </ul>
+        <form class="form-inline my-2 my-lg-0 mr-5">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <button type="button" class="btn btn-danger" routerLink="" (click)="logout()">Logout</button>
+    </div>
+</nav>
+
+  <table class="table table-bordered" style="background-color: rgb(187, 209, 227); ">
+      <thead>
+        <tr>
+          <th scope="col">Hotel Id</th>
+          <th scope="col">Hotel Name</th>
+          <th scope="col">Hotel City</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hot of hotels">
+          <th scope="row">{{hot.hotelId}}</th>
+          <td>{{hot.hotelName}}</td>
+          <td>{{hot.hotelCity}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>

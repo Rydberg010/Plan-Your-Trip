@@ -1,0 +1,51 @@
+<body class="img js-fullheight bg">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">PlanYourTrip</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/home']">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/bookings']">Bookings</a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" [routerLink]="['/aboutus']">About Us<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/contactus']">Contact Us</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 mr-5">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <button type="button" class="btn btn-danger" routerLink="" (click)="logout()">Logout</button>
+      </div>
+  </nav>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <div class="img col-lg-4">
+    <br><br>
+    <img src="assets/images/11.jpg" height="450px" width="350px" style="border-radius: 6px;" alt="hariom" >
+  </div>
+
+  <div class="col-lg-10">
+    <h1 >About This Application</h1>
+    <hr/>
+    <p class="lead  mb-0">It's an Angular and Springboot based Hotel and Package booking Crud Application. </p>
+        <p><br>I have made this application using angular and Springboot where we can Book Hotels and packages. </p>
+    <h4><b>for more details cheak my linkdln profile: <a href="https://www.linkedin.com/in/arunava-bera-793276188/">click here!</a></b></h4>
+  </div>
+  
+</body>
+
+
